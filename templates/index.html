@@ -1,9 +1,24 @@
+      {% extends 'base.html' %}
 
+      {% block body %}
 
-  {% extends 'base.html' %}
+      <form method="post">
+        <table>
+          <tr>
+            <td> Loan amount: </td> <td> <input type = "text" name="loanAmount" /> </td>
+          </tr>
+          <tr>
+            <td> Number of periodic payments: </td> <td> <input type = "text" name="nPayments" /> </td>
+          </tr>
+          <tr>
+            <td> Periodic interest rate: </td> <td> <input type = "text" name="intRate"/> </td>
+          </tr>
+        </table>
+          <br>
+        <input class="button" type="submit" formaction="/calc" value="Calculate Loan Payment!" />
+      </form>
 
-  {% block body %}
+      <p> {{display}} </p>
+      <div style="clear:both;"></div>
 
-      <h2> This is my Flask server! </h2>
-
-  {% endblock %}
+      {% endblock %}
